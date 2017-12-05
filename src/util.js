@@ -42,7 +42,7 @@ export function toFormData (obj) {
   Object.keys(obj).forEach(key => {
     const value = obj[key]
 
-    if (value instanceof FileList) {
+    if (value instanceof Array || value instanceof FileList) {
       for (let i = 0; i < value.length; i++) {
         data.append(`${key}[]`, value.item(i))
       }
